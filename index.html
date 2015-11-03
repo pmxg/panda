@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>panda</title>
+
+<style type="text/css">
+
+	*  {
+		margin:0;
+		padding: 0;
+		}
+	html,body {
+		height: 90%;
+		width:100%;
+		overflow-x: hidden;
+		background: #ddd;
+		font-family: "微软雅黑";
+		}
+	#bg,#main {
+		position: absolute;
+		left:50%;
+		top:80px;
+		-webkit-transform:translateX(-400px);
+		-moz-transform:translateX(-400px);
+		-o-transform:translateX(-400px);
+		-ms-transform:translateX(-400px);
+		-transform:translateX(-400px);
+		border: 1px solid #aaa;
+		}
+	.bar{
+		width: 33.3%;
+		float: left;
+		background: #cc8;
+		height: 40px;
+		}
+	.item{
+		cursor:pointer;
+		display: block;
+		margin-top: 10px;
+		font-size: 20px;
+		list-style: none;
+		text-align: center;
+		line-height: 20px;
+		}
+	.second{
+		border-left: 3px solid #444;
+		border-right: 3px solid #444;
+		}
+	#foot{
+		position: absolute;
+		display: block;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 55px;
+		background: #cc8
+		}
+	a:hover{
+		color: red;
+		font-weight: bold;
+		}
+	#con,#con2{
+		position: absolute;
+		top:40px;
+		bottom: 40px;
+		width: 100%;
+		/*background: rgba(230,230,230,0.8);*/
+		z-index: 100;
+		display: none;
+		}
+	#rank,#yourScore{
+		text-align: center;
+		margin-top: 50px;
+		font-size: 30px;
+		text-align: center;
+		line-height: 40px;
+		}
+	#input{
+		position:absolute;
+		top:50%;
+		left:0;
+		right:0;
+		text-align: center;
+		z-index: -10;
+		font-size: 30px;
+		
+		}
+	#inputName,#conform{
+		height: 30px;
+		width: 150px;
+		vertical-align:middle;
+		font-size: 25px;
+		text-align: center;
+		}
+	#conform{
+		font-family: "微软雅黑";
+		height: 35px;
+		width: 60px;
+		}
+	.list,#lastScore{
+		margin-top: 9px;
+		background: #ddd;
+		opacity:0.8;
+		}
+	.lis a,.lis a:visited,.lis a:link{
+		text-decoration: none;
+		color: #fff;
+		}
+		#ul2{
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+		}
+		#foot{
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			justify-content: center;
+			-ms-align-items: center;
+			align-items: center;
+		}
+		.lis{
+			list-style: none;
+			list-style: none;
+			font-size:20px;
+			color: #fff;
+			text-align: center;
+		}
+		.logo{
+			width:29px;
+			background: url("src/b.png") repeat-x;
+		}
+		#sec{
+			-ms-background-position-x: 29px;
+			background-position-x: 29px;
+		}
+</style>
+</head>
+
+<body>
+	<!-- top -->
+	<div class="top">
+		<div class="bar">
+			<a class="item" onclick="javascript:goBack()">猫熊</a>
+		</div>
+		<div class="bar">
+			<a class="item second" onclick="javascript:showScore()">我的战绩</a>
+		</div>
+		<div class="bar">
+			<a class="item" onclick="javascript:addRank()">排行榜</a>
+		</div>
+	</div>
+	<!-- 排名 -->
+	<div id="con">
+		<ol id="rank"><li class="list"></li><li class="list"></li><li class="list"></li><li class="list"></li><li class="list"></li><li class="list"></li><li class="list"></li><li class="list"></li><li class="list"></li><li class="list"></li></ol>
+	</div>
+	<div id="con2">
+		<ol id="yourScore">
+			<li id="lastScore"></li>
+		</ol>
+	</div>
+	<div id="input">
+		<p>少侠留步，敢问尊姓大名<br><input type="text" id="inputName" name="name">
+			<input type="button" id="conform" value="确定" onclick="javascript:addRankName()">
+		</p> 
+	</div>
+	<!-- 画布 -->
+	<div>
+		<canvas id="bg" width="800" height="500"></canvas>
+		<canvas id="main" width="800" height="500"></canvas>
+	</div>
+	<div id="foot">
+		<ul id="ul2">
+			<li class="lis"><a href="http://weibo.com/pmxg/">weibo</a></li>
+			<li class="lis logo"></li>
+			<li class="lis"><a href="mailto:pmxg@foxmail.com">Email</a></li>
+			<li class="lis logo" id="sec"></li>
+		</ul>
+	</div>
+<script type="text/javascript" src="js/bg.js"></script>
+<script type="text/javascript" src="js/characters.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/worm.js"></script>
+<script type="text/javascript" src="js/collision.js"></script>
+<script type="text/javascript" src="js/rank.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
+</body>
+</html>
