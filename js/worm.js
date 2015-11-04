@@ -1,5 +1,6 @@
 // worm class
-
+// worm speed
+var WormSpeed
 var wormPic=[]
 	wormPic[0]=[]
 	wormPic[1]=[]
@@ -40,7 +41,7 @@ wormObj.prototype.draw=function(){
 		if(this.alive[i]){
 			ftc.drawImage(wormPic[this.wormMirror[i]][pandaCount],this.X[i],this.Y[i])	
 			if(this.eat[i]===0){
-				this.Y[i]-=deltTime*0.1
+				this.Y[i]-=deltTime*WormSpeed
 			}else {
 				this.Y[i]+=deltTime*1
 			}

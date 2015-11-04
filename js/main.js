@@ -77,6 +77,7 @@ function getKey(){
 }
 //初始化
 function varReset(){
+	WormSpeed=0.1
 	GAMEOVER=false
 	pandaPosition=2
 	mirror=0

@@ -19,6 +19,8 @@ function collision(){
 					worm.X[i]-=10
 					worm.eat[i]=1
 					Score+=5
+					if (Score==200) {WormSpeed=0.15};
+					if (Score==500) {WormSpeed=0.2};
 				}else if(keyInterval!==2){
 					GAMEOVER=true
 				}
