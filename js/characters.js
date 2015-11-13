@@ -129,8 +129,12 @@ function drawChara(){
 			stop=true
 			//显示分数
 			show()
-			//top 10 数组
-			inputEle.style.cssText="z-index:1000"
+			//如果没输入名字出现输入框
+			if(nameEle.value==""){
+				inputEle.style.cssText="display:block"
+			}else{
+				addRankName()
+			}
 		}
 	}
 }

@@ -106,7 +106,7 @@ function varReset(){
 function addRankName(){
 	// 记录产生时间
 	recordTime=new Date()
-	inputEle.style.cssText="z-index:-10"
+	inputEle.style.cssText="display: none"
 	// top10[9][0]=nameEle.value
 	// top10[9][1]=Score
 	ajaxPost()
